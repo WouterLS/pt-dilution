@@ -195,6 +195,10 @@ class Monitor
                         }
                     }
 
+                    if ($this->adjustAveragePrice($dcaPair, $activePair)) {
+                        continue;
+                    }
+                    
                     // IF we're still here, the pair is still in dca or pairs log
                     $this->logger->info("Current slice for {$activePair->market} is not sold yet");
 
